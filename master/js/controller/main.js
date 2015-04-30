@@ -5,7 +5,6 @@ app.controller('MainCtrl', ['$scope', 'constant', '$anchorScroll', 'localStorage
             $anchorScroll();
         };
         $(window).scroll(function () {
-            console.log($(this).scrollTop());
             if ($(this).scrollTop() > 100) {
                 $('#back-to-top').fadeIn();
             } else {

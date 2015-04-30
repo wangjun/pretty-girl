@@ -21,7 +21,7 @@ app.controller('ListCtrl', ['$scope', '$http', 'constant', 'animationConfig', '$
             });
         };
         $scope.animationConfig = animationConfig;
-        console.log('animationConfig:' + JSON.stringify(animationConfig));
+        //console.log('animationConfig:' + JSON.stringify(animationConfig));
         $rootScope.$on('switchTheme', function (event, args) {
             $scope.params.type = args;
             $rootScope.currentPage = 1;
