@@ -1,0 +1,24 @@
+/* ========================================================================
+   Profile page
+ ========================================================================== */
+
+.profile {
+    margin: 0 auto;
+}
+
+.profile img{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.profile div {
+    margin: 20px auto;
+}
+
+.profile h5 {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-align: center;
+    color: black;
+}

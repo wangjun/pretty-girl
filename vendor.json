@@ -1,9 +1,17 @@
 {
   "js":[
+    "bower_components/jquery/dist/jquery.js",
     "bower_components/angular/angular.js",
-    "bower_components/angular-route/angular-route.js"
+    "bower_components/angular-route/angular-route.js",
+    "bower_components/angular-loading-bar/build/loading-bar.js",
+    "bower_components/gsap/src/uncompressed/TweenMax.js",
+    "bower_components/angular-animate/angular-animate.js",
+    "bower_components/ngFx/dist/ngFx.js",
+    "bower_components/angular-local-storage/dist/angular-local-storage.js"
   ],
   "css":[
-    "bower_components/bootstrap/dist/css/bootstrap.css"
+    "bower_components/bootstrap/dist/css/bootstrap.css",
+    "bower_components/angular-loading-bar/build/loading-bar.css",
+    "bower_components/font-awesome/css/font-awesome.css"
   ]
 }

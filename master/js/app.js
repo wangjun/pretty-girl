@@ -1,6 +1,12 @@
-var app = angular.module('girl', ['ngRoute']);
+var app = angular.module('girl', [
+    'ngRoute',
+    'angular-loading-bar',
+    'ngFx',
+    'ngAnimate',
+    'LocalStorageModule'
+]);
 app.config(['$routeProvider',
-    function($routeProvider) {
+    function ($routeProvider) {
         $routeProvider.
           when('/list', {
               templateUrl: 'html/list.html',
@@ -14,26 +20,29 @@ app.config(['$routeProvider',
               redirectTo: '/list'
           });
     }]);
-
+app.config(['localStorageServiceProvider', function (localStorageServiceProvider) {
+    localStorageServiceProvider
+      .setPrefix('girl')
+      .setStorageType('sessionStorage')
+      .setNotify(true, true);
+}]);
 app.constant('constant', {
-    apiUrl: 'http://localhost:7777/',
+    apiUrl: 'http://114.215.159.50:7776/',
     imgprefix: 'http://114.215.159.50:7777/'
 });
-
-app.controller('MainCtrl', ['$scope', 'constant', function ($scope, constant) {
-    $scope.imgprefix = constant.imgprefix;
+app.run(['$rootScope', 'localStorageService',
+    function ($rootScope, localStorageService) {
+    $rootScope.currentPage = 1;
+    $rootScope.navDisable = false;
+    var type = localStorageService.get('type');
+    if (!type) {
+        $rootScope.type = '4';
+    } else {
+        $rootScope.type = type;
+    }
 }]);
 
-app.controller('ListCtrl', ['$scope', '$http', 'constant',
-    function ($scope, $http, constant) {
-    $http.get(constant.apiUrl + 'list?type=5&page=1&limit=500').success(function(data) {
-        $scope.girls = data;
-    });
-}]);
 
-app.controller('ProfileCtrl', ['$scope', '$routeParams', '$http', 'constant',
-    function ($scope, $routeParams, $http, constant) {
-    $http.get(constant.apiUrl +  'profile?id=' + $routeParams.imgId).success(function(data) {
-        $scope.imgs = data;
-    });
-}]);
+
+
+

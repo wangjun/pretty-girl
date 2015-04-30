@@ -1,0 +1,110 @@
+/* ========================================================================
+   Component: Settings
+ ========================================================================== */
+.settings {
+    position: fixed;
+    top: 120px;
+    right: 0;
+    left: auto;
+    width: 163px;
+    background-color: #fff;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border: 1px solid #dde6e9;
+    margin-right: -163px;
+    z-index: 9999;
+    -webkit-transition: margin 0.3s cubic-bezier(1, 0, 0, 1);
+    -o-transition: margin 0.3s cubic-bezier(1, 0, 0, 1);
+    transition: margin 0.3s cubic-bezier(1, 0, 0, 1);
+}
+.settings.show {
+    margin-right: 0;
+}
+.settings-inner {
+    position: relative;
+}
+.settings-inner .settings-ctrl {
+    position: absolute;
+    top: -1px;
+    left: -50px;
+    width: 50px;
+    height: 50px;
+    background-color: #f26c4f;
+    border: 1px solid #f26c4f;
+    border-right: 0;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 3px 0 0 3px;
+}
+.settings-inner .settings-ctrl > em {
+    line-height: 49px;
+    font-size: 20px;
+    color: white;
+}
+.settings-content {
+    padding: 10px;
+}
+.setting-colors {
+    margin-bottom: 20px;
+}
+.setting-colors:before,
+.setting-colors:after {
+    content: " ";
+    display: table;
+}
+.setting-colors:after {
+    clear: both;
+}
+.setting-colors:before,
+.setting-colors:after {
+    content: " ";
+    display: table;
+}
+.setting-colors:after {
+    clear: both;
+}
+.setting-colors .setting-color {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: white;
+    opacity: 0.3;
+
+}
+.setting-colors .setting-color:last-child {
+    margin-right: 0;
+}
+.setting-colors .setting-color > em {
+    display: none;
+    line-height: 39px;
+    color: #fff;
+    color: rgba(255, 255, 255, 0.75);
+}
+.setting-colors .setting-color.checked > em {
+    display: block;
+}
+.bg-info {
+    background-color: #23b7e5;
+}
+.bg-success {
+    background-color: #27c24c;
+}
+.bg-purple {
+    background-color: #7266ba;
+}
+.checked {
+    opacity: 1!important;
+}
+.paginationIndex {
+    margin: 27px;
+    text-align:
+    center;
+    line-height: 3;
+    color: #f26c4f;
+}

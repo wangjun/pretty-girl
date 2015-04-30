@@ -1,0 +1,20 @@
+/* ========================================================================
+   Component: Back-To-Top
+ ========================================================================== */
+#back-to-top {
+    background: #f26c4f;
+    border-radius: 3px 3px 0 0;
+    bottom: 0;
+    /* display: none; */
+    height: 40px;
+    position: fixed;
+    right: 00px;
+    width: 50px;
+    line-height: 40px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    display: none;
+}

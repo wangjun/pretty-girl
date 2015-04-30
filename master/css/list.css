@@ -51,24 +51,41 @@ body.no-touch .boxInner:hover .titleBox, body.touch .boxInner.touchFocus .titleB
         padding-bottom: 100%;
     }
 }
-@media only screen and (max-width : 650px) and (min-width : 481px) {
+@media only screen and (max-width : 750px) and (min-width : 481px) {
     /* Tablet view: 2 tiles */
     .box {
         width: 50%;
         padding-bottom: 50%;
     }
 }
-@media only screen and (max-width : 1050px) and (min-width : 651px) {
+@media only screen and (max-width : 970px) and (min-width : 751px) {
     /* Small desktop / ipad view: 3 tiles */
     .box {
         width: 33.3%;
         padding-bottom: 33.3%;
     }
 }
-@media only screen and (max-width : 1290px) and (min-width : 1051px) {
+@media only screen and (max-width : 1170px) and (min-width : 971px) {
     /* Medium desktop: 4 tiles */
     .box {
         width: 25%;
         padding-bottom: 25%;
     }
 }
+@media only screen and (max-width : 1370px) and (min-width : 1171px) {
+    /* big desktop: 5 tiles */
+    .box {
+        width: 20%;
+        padding-bottom: 20%;
+    }
+}
+@media only screen and (max-width : 15700px) and (min-width : 1371px) {
+    /* big desktop: 5 tiles */
+    .box {
+        width: 16.6666666666%;
+        padding-bottom: 16.6666666666%;
+    }
+}
+
+
+

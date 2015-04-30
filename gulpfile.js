@@ -43,7 +43,7 @@ gulp.task('default', ['start', 'watch'], function () {
     });
 });
 
-gulp.task('start', ['vendor:js', 'vendor:css', 'basic']);
+gulp.task('start', ['vendor:js', 'vendor:css', 'font', 'basic']);
 
 gulp.task('basic', ['css', 'js', 'index', 'html']);
 
@@ -62,7 +62,7 @@ gulp.task('vendor:css', function () {
 });
 
 gulp.task('font', function () {
-    return gulp.src(['./bower_components/fontawesome/fonts/**']).pipe(gulp.dest('../dist/fonts/'));
+    return gulp.src(['./bower_components/font-awesome/fonts/**']).pipe(gulp.dest('./dist/fonts/'));
 });
 
 gulp.task('css', function () {
@@ -74,7 +74,7 @@ gulp.task('css', function () {
 });
 
 gulp.task('js', function () {
-    return gulp.src(['./master/js/app.js','./master/js/**/*.js'])
+    return gulp.src(['./master/js/app.js','./master/js/directive/**/*.js', './master/js/service/**/*.js','./master/js/controller/**/*.js'])
       .pipe(jshint())
       .pipe(jshint.reporter('default'))
       .pipe(concat('app.js'))

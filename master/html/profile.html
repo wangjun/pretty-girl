@@ -1,3 +1,5 @@
-<li ng-repeat="i in imgs.localBigPic">
-    <img ng-src="{{imgprefix}}{{i}}" alt=""/>
-</li>
+<div class="profile" ng-repeat="i in imgs.localBigPic" >
+    <a ng-href="{{imgprefix}}{{i}}" target="_blank"><img title="{{imgs.text}}-{{$index + 1}}" class="img" ng-src="{{imgprefix}}{{i}}" alt=""/></a>
+    <h5>{{$index + 1}}</h5>
+</div>
+<top-btn/>
