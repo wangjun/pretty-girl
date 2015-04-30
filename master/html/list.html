@@ -1,0 +1,9 @@
+
+<div id="wrap">
+    <div class="box" ng-repeat="girl in girls">
+        <div class="boxInner">
+            <a href="#/list/{{girl._id}}"><img  ng-src="{{imgprefix}}{{girl.localSmallPic}}" alt=""/></a>
+            <div class="titleBox">{{girl.text|limitTo:10}}</div>
+        </div>
+    </div>
+</div>
