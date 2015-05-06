@@ -28,7 +28,7 @@ app.config(['localStorageServiceProvider', function (localStorageServiceProvider
       .setNotify(true, true);
 }]);
 app.constant('constant', {
-    apiUrl: 'http://114.215.159.50:7779/',
+    apiUrl: 'http://114.215.159.50:7776/',
     imgprefix: 'http://114.215.159.50:7777/'
 });
 app.run(['$rootScope', 'localStorageService',
