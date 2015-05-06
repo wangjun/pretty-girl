@@ -108,3 +108,15 @@
     line-height: 3;
     color: #f26c4f;
 }
+.qr-p {
+    margin-top: 20px;
+}
+.qr-btn {
+}
+.btn-wrap {
+    text-align: center;
+}
+.qr-wrap {
+    margin-top: 5px;
+    padding-left: 20px;
+}

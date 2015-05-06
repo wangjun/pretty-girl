@@ -1,5 +1,5 @@
-app.controller('SidebarCtrl', ['$scope', '$rootScope', 'localStorageService',
-    function ($scope, $rootScope,localStorageService) {
+app.controller('SidebarCtrl', ['$scope', '$rootScope', 'localStorageService', '$location',
+    function ($scope, $rootScope,localStorageService, $location) {
     // SHOW HIDE SETTINGS
     var settings = $('.settings');
     $('.settings-ctrl').on('click', function(){
@@ -27,4 +27,22 @@ app.controller('SidebarCtrl', ['$scope', '$rootScope', 'localStorageService',
     $scope.nav = function (val) {
         $scope.$emit('nav', val);
     };
+    var show = false;
+    $scope.isShow = function () {
+        show = !show;
+        if (show) {
+            $scope.showQr = true;
+            $scope.btn.value = 'unshow';
+        } else {
+            $scope.showQr = false;
+            $scope.btn.value = 'show'
+        }
+    };
+    $scope.qr = {
+        version: 4,
+        level: 'M',
+        size: '100',
+        var: $location.absUrl()
+    };
+    $scope.btn = {value: 'show'};
 }]);
