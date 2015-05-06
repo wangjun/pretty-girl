@@ -26,7 +26,7 @@
                     <button class="btn btn-success qr-btn" ng-click="isShow()">{{btn.value}}</button>
                 </div>
                 <div class="qr-wrap" ng-show="showQr">
-                    <qrcode version="{{qr.version}}" error-correction-level="{{qr.level}}" size="{{qr.size}}" data="{{qr.var}}" href="{{qr.var}}"></qrcode>
+                    <div id="qrcode"></div>
                 </div>
             </div>
         </div>

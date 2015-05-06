@@ -8,9 +8,7 @@
     "bower_components/angular-animate/angular-animate.js",
     "bower_components/ngFx/dist/ngFx.js",
     "bower_components/angular-local-storage/dist/angular-local-storage.js",
-    "bower_components/qrcode-generator/js/qrcode.js",
-    "bower_components/qrcode-generator/js/qrcode_UTF8.js",
-    "bower_components/angular-qrcode/qrcode.js"
+    "bower_components/qrcodejs/qrcode.js"
   ],
   "css":[
     "bower_components/bootstrap/dist/css/bootstrap.css",

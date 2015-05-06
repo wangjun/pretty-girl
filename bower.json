@@ -23,7 +23,6 @@
     "animate.css": "~3.2.6",
     "font-awesome": "~4.3.0",
     "angular-local-storage": "~0.1.5",
-    "angular-qrcode": "monospaced/angular-qrcode#~5.1.0",
-    "qrcode-generator": "git://github.com/monospaced/bower-qrcode-generator.git#0.0.1"
+    "qrcodejs": "davidshimjs/qrcodejs"
   }
 }

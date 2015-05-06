@@ -3,8 +3,7 @@ var app = angular.module('girl', [
     'angular-loading-bar',
     'ngFx',
     'ngAnimate',
-    'LocalStorageModule',
-    'monospaced.qrcode'
+    'LocalStorageModule'
 ]);
 app.config(['$routeProvider',
     function ($routeProvider) {

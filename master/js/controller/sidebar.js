@@ -33,16 +33,16 @@ app.controller('SidebarCtrl', ['$scope', '$rootScope', 'localStorageService', '$
         if (show) {
             $scope.showQr = true;
             $scope.btn.value = 'unshow';
+
         } else {
             $scope.showQr = false;
-            $scope.btn.value = 'show'
+            $scope.btn.value = 'show';
         }
     };
-    $scope.qr = {
-        version: 4,
-        level: 'M',
-        size: '100',
-        var: $location.absUrl()
-    };
+    var qrcode = new QRCode("qrcode", {
+        text: $location.absUrl(),
+        width: 100,
+        height: 100
+    });
     $scope.btn = {value: 'show'};
 }]);
