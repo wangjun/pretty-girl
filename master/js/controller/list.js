@@ -1,5 +1,7 @@
 app.controller('ListCtrl', ['$scope', '$http', 'constant', 'animationConfig', '$rootScope',
     function ($scope, $http, constant, animationConfig, $rootScope) {
+        $rootScope.title = '美女列表';
+
         var settings = $('.settings');
         settings.css('display', 'block');
         $scope.params = {

@@ -1,0 +1,55 @@
+.game {
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+.game-wrap {
+    width: 10%;
+    height: 145px;
+    float: left;
+    overflow: hidden;
+    padding: 1px;
+}
+.game img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+}
+.game img:hover {
+    -webkit-transform:scale(1.25); /* Safari and Chrome */
+    -moz-transform:scale(1.25); /* Firefox */
+    -ms-transform:scale(1.25); /* IE 9 */
+    -o-transform:scale(1.25); /* Opera */
+    transform:scale(1.25);
+}
+.cover {
+    width: 100%;
+    height: 100%;
+    background:rgba(255,255,255,0.97);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100; /* Just to keep it at the very top */
+}
+#time {
+    position: relative;
+    top: 30%;
+    font-size: 100px;
+    text-align: center;
+}
+.game-timing {
+    position: fixed;
+    top:0;
+    right:0;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+}
+.game-timing span{
+    font-size: 15px;
+    color: black;
+    line-height: 50px;
+}

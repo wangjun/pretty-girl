@@ -16,6 +16,10 @@ app.config(['$routeProvider',
               templateUrl: 'html/profile.html',
               controller: 'ProfileCtrl'
           }).
+          when('/game', {
+              templateUrl: 'html/game.html',
+              controller: 'GameCtrl'
+          }).
           otherwise({
               redirectTo: '/list'
           });

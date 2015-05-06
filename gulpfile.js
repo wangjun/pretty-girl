@@ -43,7 +43,7 @@ gulp.task('default', ['start', 'watch'], function () {
     });
 });
 
-gulp.task('start', ['vendor:js', 'vendor:css', 'font', 'basic']);
+gulp.task('start', ['vendor:js', 'vendor:css', 'font', 'mp3', 'basic']);
 
 gulp.task('basic', ['css', 'js', 'index', 'html']);
 
@@ -63,6 +63,9 @@ gulp.task('vendor:css', function () {
 
 gulp.task('font', function () {
     return gulp.src(['./bower_components/font-awesome/fonts/**']).pipe(gulp.dest('./dist/fonts/'));
+});
+gulp.task('mp3', function () {
+    return gulp.src(['./master/mp3/**']).pipe(gulp.dest('./dist/mp3/'));
 });
 
 gulp.task('css', function () {

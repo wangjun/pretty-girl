@@ -1,10 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<div class="game">
+    <div class="game-wrap" ng-style="wrap" ng-repeat="girl in girls">
+        <img ng-click="choose(girl.id)" data-id="{{girl.id}}" ng-src="{{imgprefix}}{{girl.img}}" alt=""/>
+    </div>
+</div>
+<div class="game-timing">
+    <span id="minutes"></span>
+    <span>:</span>
+    <span id="seconds"></span>
+</div>
 
-</body>
-</html>
+<audio src="./mp3/start.mp3" id="startAudio" preload="none" loop="loop"></audio>
+<audio src="./mp3/choose.wav" preload="none"  id="click"></audio>
+<audio src="./mp3/same.ogg" preload="none"  id="same"></audio>
+
+<div class="cover">
+    <h1 id="time">10</h1>
+</div>
