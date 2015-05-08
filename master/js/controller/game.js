@@ -1,6 +1,10 @@
 app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$rootScope',
     function ($scope, $routeParams, $http, constant, $rootScope) {
         $rootScope.title = '游戏-美女连连看';
+        var timingInterval = null;
+        var first = null;
+        var count = 0;
+
         var reset = function () {
             var height = $(document).height();
             var width = $(document).width();
@@ -9,7 +13,6 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
             $scope.wrap = {height: (height / 5) + 'px'};
         };
 
-        var timingInterval = null;
         var timing = function () {
             var minutesLabel = document.getElementById("minutes");
             var secondsLabel = document.getElementById("seconds");
@@ -32,8 +35,6 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
                 }
             }
         };
-        var settings = $('.settings');
-        settings.css('display', 'none');
 
         var getData = function () {
             $http.get(constant.apiUrl + 'game').success(function (data) {
@@ -43,13 +44,22 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
             });
         };
 
+        var countDown = setInterval(function () {
+            var val = parseInt($('#time').text());
+            $('#time').text(--val);
+            if (val === 0) {
+                clearInterval(countDown);
+                $(".cover").slideUp(1000, function () {
+                    $('.cover').remove();
+                });
+            }
+        }, 1000);
+
         $(window).resize(function () {
             reset();
         });
-        var first = null;
-        var count = 0;
+
         $scope.choose = function (id) {
-            console.log(id);
             if (first === null) {
                 first = id;
                 $('#click')[0].play();
@@ -72,16 +82,7 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
             }
 
         };
-        var countDown = setInterval(function () {
-            var val = parseInt($('#time').text());
-            $('#time').text(--val);
-            if (val === 0) {
-                clearInterval(countDown);
-                $(".cover").slideUp(1000, function () {
-                    $('.cover').remove();
-                });
-            }
-        }, 1000);
+
         getData();
         reset();
     }]);
