@@ -1,6 +1,6 @@
 <div class="game">
     <div class="game-wrap" ng-style="wrap" ng-repeat="girl in girls">
-        <img ng-click="choose(girl.id)" data-id="{{girl.id}}" ng-src="{{imgprefix}}{{girl.img}}" alt=""/>
+        <img ng-click="choose(girl.id, $index)" data-id="{{girl.id}}" ng-src="{{imgprefix}}{{girl.img}}" alt=""/>
     </div>
 </div>
 <div class="game-timing">

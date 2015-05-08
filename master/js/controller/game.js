@@ -3,6 +3,7 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
         $rootScope.title = '游戏-美女连连看';
         var timingInterval = null;
         var first = null;
+        var firstIndex = null;
         var count = 0;
 
         var reset = function () {
@@ -59,12 +60,13 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
             reset();
         });
 
-        $scope.choose = function (id) {
+        $scope.choose = function (id, index) {
             if (first === null) {
                 first = id;
+                firstIndex = index;
                 $('#click')[0].play();
             } else {
-                if (first === id) {
+                if (first === id && firstIndex !== index) {
                     $('#same')[0].play();
                     count++;
                     first = null;
@@ -76,6 +78,7 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
                     }
                 } else {
                     first = id;
+                    firstIndex = index;
                     $('#click')[0].play();
 
                 }
