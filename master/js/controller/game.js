@@ -6,6 +6,7 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
         var firstIndex = null;
         var count = 0;
 
+        var isReseted = null;
         var reset = function () {
             var height = $(window).height();
             var width = $(window).width();
@@ -17,6 +18,11 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
                 $('.game').css('width', (width + 'px'));
                 $('.game').css('height', (height + 'px'));
                 $scope.wrap = {height: (height / 5) + 'px'};
+            }
+            if (isReseted) {
+                $scope.$apply();
+            } else {
+                isReseted = true;
             }
 
         };
