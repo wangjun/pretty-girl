@@ -1,17 +1,24 @@
 app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$rootScope',
     function ($scope, $routeParams, $http, constant, $rootScope) {
-        $rootScope.title = '游戏-美女连连看';
+        $rootScope.title = '美女连连看';
         var timingInterval = null;
         var first = null;
         var firstIndex = null;
         var count = 0;
 
         var reset = function () {
-            var height = $(document).height();
-            var width = $(document).width();
-            $('.game').css('width', (width + 'px'));
-            $('.game').css('height', (height + 'px'));
-            $scope.wrap = {height: (height / 5) + 'px'};
+            var height = $(window).height();
+            var width = $(window).width();
+            if (height > width) {
+                $('.game').css('width', (width + 'px'));
+                $('.game').css('height', (height + 'px'));
+                $scope.wrap = {height: (height / 10) + 'px',  width: "20%"};
+            } else {
+                $('.game').css('width', (width + 'px'));
+                $('.game').css('height', (height + 'px'));
+                $scope.wrap = {height: (height / 5) + 'px'};
+            }
+
         };
 
         var timing = function () {

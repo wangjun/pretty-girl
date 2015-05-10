@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="pretty-girl">
     <meta name="keywords" content="nodejs,angular,bootstrap,fontawesome">
-    <title>pretty-girl {{title}}</title>
+    <title ng-bind-template="pretty-girl {{title}}"></title>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/app.css">
-    <link rel="icon" type="image/x-icon" href="https://assets-cdn.github.com/favicon.ico">
+    <link rel="shortcut icon" href="img/favicon.ico">
 </head>
 <body ng-controller="MainCtrl">
 <div ng-view></div>
