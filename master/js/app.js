@@ -20,10 +20,6 @@ app.config(['$routeProvider',
               templateUrl: 'html/game.html',
               controller: 'GameCtrl'
           }).
-          when('/game-reward', {
-              templateUrl: 'html/game-reward.html',
-              controller: 'GameRewardCtrl'
-          }).
           otherwise({
               redirectTo: '/list'
           });
