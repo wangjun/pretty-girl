@@ -5,8 +5,30 @@ app.controller('SidebarCtrl', ['$scope', '$rootScope', 'localStorageService', '$
     $('.settings-ctrl').on('click', function(){
         settings.toggleClass('show');
     });
-    // Load THEME CSS
+    var show = false;
+    var qrcode = null;
+    $scope.isShow = function () {
+        show = !show;
+        if (show) {
+            if (!qrcode) {
+                qrcode = new QRCode("qrcode", {
+                    text: $location.absUrl(),
+                    width: 100,
+                    height: 100
+                });
+            }
+            $scope.showQr = true;
+            $scope.btn.value = 'unshow';
 
+        } else {
+            $scope.showQr = false;
+            $scope.btn.value = 'show';
+        }
+    };
+    $scope.btn = {value: 'show'};
+}]);
+app.controller('SidebarListCtrl', ['$scope', '$rootScope', 'localStorageService',
+    function ($scope, $rootScope,localStorageService) {
     var $loaders = $('[load-css]');
     $loaders.on('click', function (e) {
         var element = $(this);
@@ -27,22 +49,8 @@ app.controller('SidebarCtrl', ['$scope', '$rootScope', 'localStorageService', '$
     $scope.nav = function (val) {
         $scope.$emit('nav', val);
     };
-    var show = false;
-    $scope.isShow = function () {
-        show = !show;
-        if (show) {
-            $scope.showQr = true;
-            $scope.btn.value = 'unshow';
+}]);
 
-        } else {
-            $scope.showQr = false;
-            $scope.btn.value = 'show';
-        }
-    };
-    var qrcode = new QRCode("qrcode", {
-        text: $location.absUrl(),
-        width: 100,
-        height: 100
-    });
-    $scope.btn = {value: 'show'};
+app.controller('SidebarGameCtrl', ['$scope', function ($scope) {
+
 }]);

@@ -1,0 +1,11 @@
+<div ng-controller="SidebarGameCtrl">
+    <p class="qr-p">QR</p>
+    <div>
+        <div class="btn-wrap">
+            <button class="btn btn-success qr-btn" ng-click="isShow()">{{btn.value}}</button>
+        </div>
+        <div class="qr-wrap" ng-show="showQr">
+            <div id="qrcode"></div>
+        </div>
+    </div>
+</div>

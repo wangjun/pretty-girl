@@ -1,7 +1,7 @@
 app.controller('ListCtrl', ['$scope', '$http', 'constant', 'animationConfig', '$rootScope',
     function ($scope, $http, constant, animationConfig, $rootScope) {
         $rootScope.title = '美女列表';
-
+        $scope.sidebarfile = 'html/sidebar-list.html';
         var settings = $('.settings');
         settings.css('display', 'block');
         $scope.params = {
@@ -20,6 +20,7 @@ app.controller('ListCtrl', ['$scope', '$http', 'constant', 'animationConfig', '$
                     $rootScope.navDisable = true;
                 }
                 $scope.girls = data;
+                $scope.toTop();
             });
         };
         $scope.animationConfig = animationConfig;

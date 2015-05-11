@@ -9,15 +9,36 @@
     <span id="seconds"></span>
 </div>
 
-<audio src="./mp3/start.mp3" id="startAudio" preload="none" loop="loop"></audio>
-<audio src="./mp3/choose.wav" preload="none"  id="click"></audio>
-<audio src="./mp3/same.wav" preload="none"  id="same"></audio>
+<div id="audio">
+    <audio src="./mp3/choose.wav" preload="none"  id="click"></audio>
+    <audio src="./mp3/same.wav" preload="none"  id="same"></audio>
 
-<div class="cover">
-    <h1 id="time">1</h1>
 </div>
+<div class="cover">
+    <div class="wrap">
+        <div class="level">
+            <label class="radio-inline"  ng-repeat="l in level">
+                <input type="radio" ng-model="config.level" name="level" value="{{l.key}}"> {{l.value}}
+            </label>
+        </div>
+        <div class="bgMp3">
+            <label class="radio-inline"  ng-repeat="l in bgMp3">
+                <input type="radio" ng-model="config.bgMp3" name="bgMp3" value="{{l.key}}"> {{l.value}}
+            </label>
+        </div>
+        <div class="ok">
+            <p1>难度:</p1>
+            <button ng-click="ok()">确定</button>
+        </div>
+        <div>
+            {{config|json}}
+        </div>
+    </div>
+
+    <!--<h1 id="time">1</h1>-->
+</div>
+<!--<div ng-include="'html/sidebar.html'"></div>-->
 
 <div ng-show="displayBigImg" class="bigImg">
-
         <img id="bigImg" ng-src="{{bigImgSrc}}" alt=""/>
 </div>

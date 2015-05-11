@@ -11,6 +11,4 @@ app.controller('MainCtrl', ['$scope', 'constant', '$anchorScroll', 'localStorage
                 $('#back-to-top').fadeOut();
             }
         });
-
-
     }]);
