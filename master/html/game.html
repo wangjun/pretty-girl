@@ -1,6 +1,6 @@
 <div class="game">
     <div class="game-wrap" ng-style="wrap" ng-repeat="girl in girls">
-        <img ng-click="choose(girl.id, $index)" data-id="{{girl.id}}" ng-src="{{imgprefix}}{{girl.img}}" alt=""/>
+        <img  ng-click="choose(girl.id, $index)" data-id="{{girl.id}}" ng-src="{{imgprefix}}{{girl.img}}" alt=""/>
     </div>
 </div>
 <div class="game-timing">
@@ -14,5 +14,10 @@
 <audio src="./mp3/same.wav" preload="none"  id="same"></audio>
 
 <div class="cover">
-    <h1 id="time">10</h1>
+    <h1 id="time">1</h1>
+</div>
+
+<div ng-show="displayBigImg" class="bigImg">
+
+        <img id="bigImg" ng-src="{{bigImgSrc}}" alt=""/>
 </div>

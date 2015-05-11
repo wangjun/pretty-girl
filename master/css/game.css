@@ -53,3 +53,74 @@
     color: black;
     line-height: 50px;
 }
+.bigImg {
+    position: fixed;
+    top: 10%;
+    bottom: 10%;
+    left: 20%;
+    right: 20%;
+    z-index: 10000;
+    overflow: hidden;
+}
+.bigImg img {
+    width: 100%;
+}
+
+@-webkit-keyframes shade{
+    from{opacity:1;}
+    15%{opacity:0.4;}
+    to{opacity:1;}
+}
+@-moz-keyframes shade{
+    from{opacity:1;}
+    15%{opacity:0.4;}
+    to{opacity:1;}
+}
+@-ms-keyframes shade{
+    from{opacity:1;}
+    15%{opacity:0.4;}
+    to{opacity:1;}
+}
+@-o-keyframes shade{
+    from{opacity:1;}
+    15%{opacity:0.4;}
+    to{opacity:1;}
+}
+@keyframes shade{
+    from{opacity:1;}
+    15%{opacity:0.4;}
+    to{opacity:1;}
+}
+
+#reward .box {
+    float: left;
+    padding: 10px;
+    width: 50%;
+    height: auto;
+    border: none;
+
+
+}
+#reward .box {
+    float: left;
+    padding: 10px;
+    width: 50%;
+    height: auto;
+    border: none;
+}
+#reward .box .pic {
+    padding: 10px;
+    background: #fff;
+    border-radius: 10px;
+}
+#reward img {
+    width: 100%;
+    height: auto;
+}
+#reward .box:hover{
+    -webkit-animation:shade 3s ease-in-out 1;
+    -moz-animation:shade 3s ease-in-out 1;
+    -ms-animation:shade 3s ease-in-out 1;
+    -o-animation:shade 3s ease-in-out 1;
+    animation:shade 3s ease-in-out 1;
+}

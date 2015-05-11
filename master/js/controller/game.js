@@ -1,5 +1,5 @@
-app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$rootScope',
-    function ($scope, $routeParams, $http, constant, $rootScope) {
+app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$rootScope', '$timeout',
+    function ($scope, $routeParams, $http, constant, $rootScope, $timeout) {
         $rootScope.title = '美女连连看';
         var timingInterval = null;
         var first = null;
@@ -49,10 +49,23 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
                 }
             }
         };
-
+        var uniIds = [];
+        var getImgArray = function () {
+            $http.post(constant.apiUrl + 'imgarray', {ids: uniIds}).success(function (data) {
+                console.log("data\n", data);
+            });
+        };
         var getData = function () {
             $http.get(constant.apiUrl + 'game').success(function (data) {
                 $scope.girls = data;
+                var ids = data.map(function (i) {
+                    return i.id;
+                });
+                for (var i = 0; i < ids.length; i++) {
+                    if (uniIds.indexOf(ids[i]) === -1) {
+                        uniIds.push(ids[i]);
+                    }
+                }
                 $('#startAudio')[0].play();
                 timing();
             });
@@ -72,7 +85,30 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
         $(window).resize(function () {
             reset();
         });
+        var imgSrc = null;
 
+        $(document).on('mouseover', function(e) {
+            imgSrc = $(e.target).attr('src');
+        });
+        var getBigImg = function () {
+/*            $http.get(constant.apiUrl + 'game/big?id=' + $scope.imgId).success(function (data) {
+                $scope.bigImg = data.localBigPic;
+
+            });*/
+            $('#bigImg').attr('src', imgSrc);
+            $scope.displayBigImg = true;
+            $timeout(function () {
+               $scope.displayBigImg = false;
+            }, 1000);
+            $scope.$apply();
+
+        };
+        $(document).keydown(function(event){
+            var keyCode = event.keyCode;
+            if (keyCode === 32 && imgSrc) {
+                getBigImg();
+            }
+        });
         $scope.choose = function (id, index) {
             if (first === null) {
                 first = id;
