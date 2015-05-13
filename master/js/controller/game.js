@@ -83,7 +83,6 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
     var getData = function () {
       $http.get(constant.apiUrl + 'game?type=' + $scope.config.level).success(function (data) {
         $scope.girls = data;
-        createAudio('bgAudio', './mp3/12/' + getRandomNum(8) + '.mp3');
 
         $('#bgAudio')[0].play();
         timing();
@@ -160,7 +159,7 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
     var createStartAudio = function () {
       createAudio('startAudio', './mp3/start_' + getRandomNum(2) + '.mp3');
       $('#startAudio')[0].play();
-
+      createAudio('bgAudio', './mp3/12/' + getRandomNum(8) + '.mp3');
     };
     $scope.ok = function () {
       $(".cover").slideUp(1000, function () {
