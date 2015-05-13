@@ -74,7 +74,7 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
       var audioContainer = $('#audio');
       var audio = $('<audio />', {
         loop: 'loop',
-        preload: 'none',
+        preload: 'auto',
         id: id,
         src: src
       });
