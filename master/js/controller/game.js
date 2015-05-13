@@ -20,7 +20,7 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
       {key: '5', value: '浪子的心情'},
       {key: '6', value: '干一杯-酒廊情歌'},
       {key: '7', value: '烧酒话'},
-      {key: '8', value: '你潇洒我漂亮'},
+      {key: '8', value: '你潇洒我漂亮'}
     ];
     $scope.config = {
       level: '2',
@@ -83,7 +83,7 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$http', 'constant', '$roo
     var getData = function () {
       $http.get(constant.apiUrl + 'game?type=' + $scope.config.level).success(function (data) {
         $scope.girls = data;
-        createAudio('bgAudio', './mp3/12/' + $scope.config.bgMp3 + '.mp3');
+        createAudio('bgAudio', './mp3/12/' + getRandomNum(8) + '.mp3');
 
         $('#bgAudio')[0].play();
         timing();

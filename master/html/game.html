@@ -15,23 +15,23 @@
 
 </div>
 <div class="cover">
-    <div class="wrap">
-        <div class="level">
-            <label class="radio-inline"  ng-repeat="l in level">
-                <input type="radio" ng-model="config.level" name="level" value="{{l.key}}"> {{l.value}}
-            </label>
-        </div>
-        <div class="bgMp3">
-            <label class="radio-inline"  ng-repeat="l in bgMp3">
-                <input type="radio" ng-model="config.bgMp3" name="bgMp3" value="{{l.key}}"> {{l.value}}
-            </label>
-        </div>
-        <div class="ok">
-            <p1>难度:</p1>
-            <button ng-click="ok()">确定</button>
-        </div>
-        <div>
-            {{config|json}}
+    <div class="content">
+        <div class="todo">
+            <div class="todo-search">
+                <h1>美女连连看</h1>
+            </div>
+            <div class="level">
+                <div class="radioW">
+                    <h3>请选择游戏难度</h3>
+                    <label class="radio-inline"  ng-repeat="l in level">
+                        <input type="radio" ng-model="config.level" name="level" value="{{l.key}}"> {{l.value}}
+                    </label>
+                    <div class="btnWrap">
+                        <button class="btn btn-ok" ng-click="ok()">START</button>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
 
