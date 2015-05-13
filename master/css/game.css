@@ -96,6 +96,10 @@
     text-align: center;
     color: white;
 }
+.cover .github {
+    text-decoration: none;
+    color: white;
+}
 .cover h3 {
     text-align: center;
     color: #1abc9c;
