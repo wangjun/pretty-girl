@@ -32,7 +32,7 @@ app.config(['localStorageServiceProvider', function (localStorageServiceProvider
 }]);
 app.constant('constant', {
     apiUrl: 'http://114.215.159.50:7776/',
-    imgprefix: 'http://114.215.159.50:7777/'
+    imgprefix: '//pretty-cdn.b0.upaiyun.com/'
 });
 app.run(['$rootScope', 'localStorageService',
     function ($rootScope, localStorageService) {
